@@ -1,1 +1,21 @@
-<p>graficas1 works!</p>
+<div class="row">
+
+
+    <div class="col-6">
+        <div class="card" >
+            <div class="card-body">
+
+                <div>
+                    <h4> {{graficos.grafico1.leyenda}} </h4>
+                    <app-grafico-dona 
+                    [chartData]="graficos.grafico1.data"
+                    [chartLabels]="graficos.grafico1.labels"
+                    [chartType]="graficos.grafico1.type"
+                    >
+
+                    </app-grafico-dona>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
