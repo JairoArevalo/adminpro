@@ -11,6 +11,8 @@ import { RegisterComponent } from './login/register/register.component';
 import { NofoundComponent } from './share/nofound/nofound.component';
 import { PagesModule } from './pages/pages.module';
 
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -20,11 +22,13 @@ import { PagesModule } from './pages/pages.module';
     NofoundComponent,
     RegisterComponent,
     
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PagesModule
+    PagesModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
