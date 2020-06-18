@@ -10,6 +10,7 @@ import { FormsModule } from "@angular/forms";
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { ChartsModule } from 'ng2-charts';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 
@@ -22,13 +23,15 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
     PagesComponent,
     ProgressComponent,
     IncrementadorComponent,
-    GraficoDonaComponent
+    GraficoDonaComponent,
+    AccountSettingsComponent
   ],
   exports:[
     DashboardComponent,
     ProgressComponent,
     Graficas1Component,
     PagesComponent,
+    AccountSettingsComponent
     
   ],
   imports: [
@@ -37,6 +40,7 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
     AppRoutingModule,
     FormsModule,
     ChartsModule
+    
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
