@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare function initPluggins();
+
 @Component({
   selector: 'app-nofound',
   templateUrl: './nofound.component.html',
@@ -10,6 +12,7 @@ export class NofoundComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    initPluggins();
   }
 
 }

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //Modulo de servicios
 import { ServiceModule } from './services/service.module';
 //Modulo para manejar paginas internas
@@ -16,8 +16,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 //Componentes
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register/register.component';
+import { LoginComponent } from './login/login.component';
+
+
 import { NofoundComponent } from './share/nofound/nofound.component';
 
 
@@ -28,9 +30,10 @@ import { NofoundComponent } from './share/nofound/nofound.component';
 @NgModule({
   declarations: [
     AppComponent,
+    RegisterComponent,
     LoginComponent,
     NofoundComponent,
-    RegisterComponent,
+    
     
     
   ],
@@ -39,6 +42,7 @@ import { NofoundComponent } from './share/nofound/nofound.component';
     AppRoutingModule,
     PagesModule,
     FormsModule,
+    ReactiveFormsModule,
     ServiceModule
   ],
   providers: [

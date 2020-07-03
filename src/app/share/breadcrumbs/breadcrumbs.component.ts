@@ -16,7 +16,12 @@ export class BreadcrumbsComponent implements OnInit {
     this.getDataRouter().subscribe((data)=>{
       
       this.tituloPage = data.titulo;
-      this.title.setTitle( this.tituloOrigen +' - '+ this.tituloPage)
+      if (this.tituloPage == 'Registro' || this.tituloPage == 'Ingreso') {
+        this.title.setTitle(this.tituloPage)
+      } else {
+        
+        this.title.setTitle( this.tituloOrigen +' - '+ this.tituloPage) 
+      }
       let metaTag: MetaDefinition ={
         name:'Decripcion',
         content: ( this.tituloOrigen +' - '+ this.tituloPage) ,

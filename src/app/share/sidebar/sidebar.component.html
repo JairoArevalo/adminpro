@@ -14,7 +14,7 @@
                                 <li><a href="javascript:void()">My Estado </a></li>
                                 <li><a href="javascript:void()">Buzón</a></li>
                                 <li><a [routerLink]="[ '/accountSettings' ]" routerLinkActive="active" >Ajustes</a></li>
-                                <li><a [routerLink]="[ '/login' ]">Logout</a></li>
+                                <li><a (click)="logout()" class="pointer">Logout</a></li>
                             </ul>
                         </li>
                         <li class="nav-devider"></li>
