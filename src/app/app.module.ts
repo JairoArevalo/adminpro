@@ -27,14 +27,13 @@ import { NofoundComponent } from './share/nofound/nofound.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
     NofoundComponent,
-    
-    
     
   ],
   imports: [

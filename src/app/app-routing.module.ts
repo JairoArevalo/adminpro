@@ -8,6 +8,7 @@ import { ProgressComponent } from './pages/progress/progress.component';
 import { Graficas1Component } from './pages/graficas1/graficas1.component';
 import { NofoundComponent } from './share/nofound/nofound.component';
 import { PagesComponent } from './pages/pages/pages.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 import { AccountSettingsComponent } from './pages/account-settings/account-settings.component';
 import { PromesasComponent } from './pages/promesas/promesas.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
       { path: 'promesas', component:  PromesasComponent,data:{ titulo:'Promesas'}  },
       { path: 'rxjs', component: RxjsComponent ,data:{ titulo:'rxjs'}} ,
       { path: 'accountSettings', component: AccountSettingsComponent ,data:{ titulo:'Ajustes del Tema'} },
+      { path: 'perfil', component: ProfileComponent, data:{titulo:'Perfil'} },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
     ] 
   },

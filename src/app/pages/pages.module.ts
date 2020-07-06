@@ -4,6 +4,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule } from "@angular/forms";
 import { ChartsModule } from 'ng2-charts';
 import { ShareModule } from '../share/share.module';
+import { PipesModule } from '../pipes/pipes.module';
 
 //Componentes :
 
@@ -16,6 +17,7 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -31,7 +33,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     GraficoDonaComponent,
     AccountSettingsComponent,
     PromesasComponent,
-    RxjsComponent
+    RxjsComponent,
+    ProfileComponent
   ],
   exports:[
     DashboardComponent,
@@ -46,7 +49,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     ShareModule,
     AppRoutingModule,
     FormsModule,
-    ChartsModule
+    ChartsModule,
+    PipesModule
     
   ],
   schemas: [
