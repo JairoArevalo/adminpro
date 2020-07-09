@@ -4,6 +4,7 @@ import { SettigsService, SharedService, SidebarService, LoginGuardGuard, SubirAr
 import { AppRoutingModule } from '../app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuarioService } from './usuario/usuario.service';
+import { ModalUploadService } from '../components/modal-upload/modal-upload.service';
 
 
 
@@ -22,7 +23,8 @@ import { UsuarioService } from './usuario/usuario.service';
     SidebarService,
     UsuarioService,
     LoginGuardGuard,
-    SubirArchivoService
+    SubirArchivoService,
+    ModalUploadService
   ]
 })
 export class ServiceModule { }

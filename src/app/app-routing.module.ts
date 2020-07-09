@@ -14,6 +14,7 @@ import { AccountSettingsComponent } from './pages/account-settings/account-setti
 import { PromesasComponent } from './pages/promesas/promesas.component';
 import { RxjsComponent } from './pages/rxjs/rxjs.component';
 import { LoginGuardGuard } from './services/service.index';
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 
 
 
@@ -27,7 +28,9 @@ const routes: Routes = [
       { path: 'promesas', component:  PromesasComponent,data:{ titulo:'Promesas'}  },
       { path: 'rxjs', component: RxjsComponent ,data:{ titulo:'rxjs'}} ,
       { path: 'accountSettings', component: AccountSettingsComponent ,data:{ titulo:'Ajustes del Tema'} },
+      //MAntenimiento
       { path: 'perfil', component: ProfileComponent, data:{titulo:'Perfil'} },
+      { path: 'usuarios', component: UsuariosComponent, data:{titulo:'Usuarios'} },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
     ] 
   },

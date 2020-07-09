@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
     );
 
     this.usuarioService.crearUsuario(usuario).subscribe((data:any)=>{
-      console.log('Usuario Sercive', data);
+      
       this.formulario.reset();
       Swal.fire({
         icon: 'success',

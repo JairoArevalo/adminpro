@@ -105,7 +105,10 @@ export class UsuarioService {
     url+='?token='+this.token;
     return this.http.put(url,usuario).pipe(
       map((datos:any)=>{
-        this.guardarStorage(datos.usuario._id, this.token, datos.usuario);
+        if (usuario.id === this.usuarioLog.id) {
+          
+          this.guardarStorage(datos.usuario._id, this.token, datos.usuario);
+        }
         
         return datos.usuario;
       })
@@ -133,4 +136,20 @@ export class UsuarioService {
     })
   }
 
+  cargarUsuarios(desde?:number){
+    
+    let url = `${URL_SERVICIOS}/usuario?desde=${desde}`;
+    return this.http.get(url)
+  }
+
+  buscarUsuarios(termino:string){
+    let url = `${URL_SERVICIOS}/busqueda/coleccion/usuarios/${termino}`;
+    return this.http.get(url)
+  }
+
+  borrarUsuario(usuario:any){
+    let url = `${URL_SERVICIOS}/usuario/${usuario._id}?token=${this.token}`;
+    return this.http.delete(url)
+    
+  } 
 }
