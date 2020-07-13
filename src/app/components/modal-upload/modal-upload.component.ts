@@ -12,6 +12,7 @@ export class ModalUploadComponent implements OnInit {
   oculto:string;
   imagenSubir:File;
   imagenTemp:any;
+  X:string='C'
   constructor(public subirArchivoService: SubirArchivoService, public modalService: ModalUploadService) {
     this.oculto = this.modalService.oculto;
     

@@ -15,6 +15,12 @@ import { PromesasComponent } from './pages/promesas/promesas.component';
 import { RxjsComponent } from './pages/rxjs/rxjs.component';
 import { LoginGuardGuard } from './services/service.index';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { HospitalesComponent } from './pages/hospitales/hospitales.component';
+import { MedicosComponent } from './pages/medicos/medicos.component';
+import { MedicoComponent } from './pages/medicos/medico.component';
+
+
+
 
 
 
@@ -31,6 +37,10 @@ const routes: Routes = [
       //MAntenimiento
       { path: 'perfil', component: ProfileComponent, data:{titulo:'Perfil'} },
       { path: 'usuarios', component: UsuariosComponent, data:{titulo:'Usuarios'} },
+      { path: 'hospitales', component: HospitalesComponent, data:{titulo:'Hospitales'} },
+      { path: 'medicos', component: MedicosComponent, data:{titulo:'Medicos'} },
+      { path: 'medico/:id', component: MedicoComponent, data:{titulo:'Medico-Editar'} },
+      
       { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
     ] 
   },
@@ -45,5 +55,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
+ 
 })
 export class AppRoutingModule { }

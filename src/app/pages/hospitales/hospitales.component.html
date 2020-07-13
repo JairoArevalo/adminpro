@@ -1,0 +1,76 @@
+<div class="row animated fadeInDown">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <input type="text" #input (keyup)="buscarHospital(input.value)" class="form-control" placeholder="Buscar Hospital">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row animated fadeInDown" *ngIf="cargando">
+    <div class="col-sm-12">
+
+        <div class="alert alert-info text-center">
+            <strong>Cargando</strong>
+            <br>
+            <i class="fa fa-refresh fa-spin fa-2x"></i>
+            <br>
+            <span>Espere</span>
+        </div>
+    </div>
+
+</div>
+
+<div class="row animated fadeInUp" *ngIf="!cargando">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h3 class="card-title">Hospitales Registrados ( <small> {{totalHospitales}} </small> )
+                    <button (click)="crearHospital()"  class="btn btn-success btn-rounded text-right" style="float: right;">
+                        <i class="fa fa-plus"></i>
+                        Agregar Hospital
+                    </button>
+                </h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th> Imagen </th>
+                            <th> Nombre </th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let hospital of hospitales">
+                            <td>  
+                                <img (click)="actualizarImagen( hospital )" [src]="hospital.img | imagen:'hospital'" width="50px" height="50px" class="pointer"> 
+                            
+                            </td>
+                            <td> <input type="text" class="form-control" [(ngModel)]="hospital.nombre" > </td>
+                        
+                            <button (click)="editarHospital(hospital)"  class="btn btn-primary" style="margin-right: 2px;">
+                                <i class="fa fa-save"></i>
+                                Guardar
+                            </button>
+                            <button (click)="elminarHospital(hospital)"  class="btn btn-danger">
+                                <i class="fa fa-trash-o"></i>
+                                Eliminar
+                            </button>
+                        </tr>
+                    </tbody>
+
+
+                </table>
+                <button  class="btn btn-danger" style="margin-right: 2px;">
+                    <i class="fa fa-arrow-left"></i>
+                    Anteriores
+                </button>
+                <button  class="btn btn-success">
+                    Siguientes
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>

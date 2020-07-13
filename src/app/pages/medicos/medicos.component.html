@@ -1,0 +1,56 @@
+<div class="row animated fadeInDown">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <input type="text" #input (keyup)="buscarMedico(input.value)" class="form-control" placeholder="Buscar Medico">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row animated fadeInDown">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Medicos Registrados ( <small> {{totalMedicos}} </small> )
+                    <button [routerLink]="['/medico','nuevo']"  class="btn btn-success btn-rounded text-right" style="float: right;">
+                        <i class="fa fa-plus"></i>
+                        Agregar Medico
+                    </button>
+                </h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th> Imagen </th>
+                            <th> Nombre </th>
+                            <th> Hospital </th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let medico of medicos" >
+                            <td>  
+                                <img (click)="actualizarImagen( medico )" [src]="medico.img | imagen:'medico'" width="50px" height="50px" class="pointer">
+                            
+                            </td>
+                            <td> {{medico.nombre}} </td>
+
+                            <td> {{medico.hospital.nombre}} </td>
+                        
+                            <button [routerLink]="['/medico', medico._id]"  class="btn btn-primary" style="margin-right: 2px;">
+                                <i class="fa fa-save"></i>
+                                Editar
+                            </button>
+                            <button  (click)="borrarMedico(medico)" class="btn btn-danger">
+                                <i class="fa fa-trash-o"></i>
+                                Eliminar
+                            </button>
+                        </tr>
+                    </tbody>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
