@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsuarioService } from '../services/service.index';
 import { Usuario } from '../models/usuario.models';
+import Swal from 'sweetalert2';
+import { catchError } from 'rxjs/operators';
 
 declare function initPluggins();
 declare const gapi: any;
@@ -55,6 +57,8 @@ export class LoginComponent implements OnInit {
       this.usuarioService.loginUsuarioGoogle(token).subscribe((data)=>{
         window.location.href = '/dashboard'
         
+      },(err)=>{
+        Swal.fire('Ha Ocurrido un error ', err.error.mensaje)
       })
       
     } )
@@ -75,6 +79,9 @@ export class LoginComponent implements OnInit {
       // console.log(data);
       
       this.router.navigate(['/dashboard']);
+      
+    },(err)=>{
+      Swal.fire('Ha Ocurrido un error ', err.error.mensaje)
       
     })
   }

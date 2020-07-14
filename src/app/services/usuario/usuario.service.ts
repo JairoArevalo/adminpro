@@ -14,6 +14,7 @@ import { SubirArchivoService } from '../subirArchivo/subir-archivo.service';
 export class UsuarioService {
   usuarioLog: Usuario;
   token:string;
+  menu:[] = [];
   constructor(  public http: HttpClient,
                 public router:Router,
                 public subirArchivoService: SubirArchivoService) {
@@ -32,7 +33,7 @@ export class UsuarioService {
   crearUsuario( usuario:Usuario ){
 
     let url = URL_SERVICIOS+'/usuario';
-
+    
     return this.http.post( url, usuario).pipe(
       map((data: any)=>{
         return data.body;
@@ -53,6 +54,7 @@ export class UsuarioService {
     return this.http.post(url, usuario).pipe(
       map((data:any)=>{
         this.guardarStorage(data.id, data.token, data.usuario);
+       
         return data.usuario;
       })
     )

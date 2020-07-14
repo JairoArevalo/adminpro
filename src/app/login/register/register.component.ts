@@ -75,6 +75,10 @@ export class RegisterComponent implements OnInit {
       })
       this.router.navigate(['/login']);
       
+    },(err)=>{
+      
+      Swal.fire('Ha ocurrido un error ', err.error.errors.errors.email.properties.message + '  Ya existe un usuario con ese correo')
+      
     })
     
 

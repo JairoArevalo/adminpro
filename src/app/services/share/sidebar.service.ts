@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { UsuarioService } from '../usuario/usuario.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,9 @@ export class SidebarService {
         { titulo:'Graficas', url:'/graficas1'},
         { titulo:'Promesas', url:'/promesas'},
         { titulo:'Rxjs', url:'/rxjs'}
-        
+
       ]
-  
+
     },
     {
       titulo:'Mantenimiento',
@@ -29,5 +30,7 @@ export class SidebarService {
     }
 
   ];
-  constructor() { }
+  constructor() {
+
+   }
 }
