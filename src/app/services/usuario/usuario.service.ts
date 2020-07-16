@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario.models';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators'
+import { map, catchError } from 'rxjs/operators'
 import { URL_SERVICIOS } from 'src/app/config/config';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
@@ -154,4 +154,15 @@ export class UsuarioService {
     return this.http.delete(url)
     
   } 
+
+  renuevaToken(){
+    let url = `${URL_SERVICIOS}/login/renuevaToken?token=${this.token}`;
+    return this.http.get(url).pipe(
+      map((data:any)=>{
+        this.token = data.token;
+        localStorage.setItem('token', this.token)
+        return true
+      })
+    )
+  }
 }

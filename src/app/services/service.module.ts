@@ -7,6 +7,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuarioService } from './usuario/usuario.service';
 import { ModalUploadService } from '../components/modal-upload/modal-upload.service';
+import { RenuevaTokenGuard } from './guards/renueva-token.guard';
 
 
 
@@ -28,6 +29,7 @@ import { ModalUploadService } from '../components/modal-upload/modal-upload.serv
     SidebarService,
     UsuarioService,
     LoginGuardGuard,
+    RenuevaTokenGuard,
     AdminGuard,
     SubirArchivoService,
     ModalUploadService,

@@ -13,7 +13,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { AccountSettingsComponent } from './pages/account-settings/account-settings.component';
 import { PromesasComponent } from './pages/promesas/promesas.component';
 import { RxjsComponent } from './pages/rxjs/rxjs.component';
-import { LoginGuardGuard, AdminGuard } from './services/service.index';
+import { LoginGuardGuard, AdminGuard, RenuevaTokenGuard } from './services/service.index';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { HospitalesComponent } from './pages/hospitales/hospitales.component';
 import { MedicosComponent } from './pages/medicos/medicos.component';
@@ -36,12 +36,12 @@ const routes: Routes = [
       { path: 'rxjs', component: RxjsComponent ,data:{ titulo:'rxjs'}} ,
       { path: 'accountSettings', component: AccountSettingsComponent ,data:{ titulo:'Ajustes del Tema'} },
       //MAntenimiento
-      { path: 'perfil', component: ProfileComponent, data:{titulo:'Perfil'} },
-      { path: 'usuarios', component: UsuariosComponent, data:{titulo:'Usuarios'}, canActivate:[AdminGuard] },
-      { path: 'hospitales', component: HospitalesComponent, data:{titulo:'Hospitales'},canActivate:[AdminGuard] },
-      { path: 'medicos', component: MedicosComponent, data:{titulo:'Medicos'}, canActivate:[AdminGuard] },
-      { path: 'medico/:id', component: MedicoComponent, data:{titulo:'Medico-Editar'},canActivate:[AdminGuard] },
-      { path: 'busqueda/:termino', component: BusquedaComponent, data:{titulo:'Busqueda'}, canActivate:[AdminGuard] },
+      { path: 'perfil', component: ProfileComponent, data:{titulo:'Perfil'}, canActivate:[RenuevaTokenGuard] },
+      { path: 'usuarios', component: UsuariosComponent, data:{titulo:'Usuarios'}, canActivate:[AdminGuard, RenuevaTokenGuard] },
+      { path: 'hospitales', component: HospitalesComponent, data:{titulo:'Hospitales'},canActivate:[AdminGuard, RenuevaTokenGuard] },
+      { path: 'medicos', component: MedicosComponent, data:{titulo:'Medicos'}, canActivate:[AdminGuard, RenuevaTokenGuard] },
+      { path: 'medico/:id', component: MedicoComponent, data:{titulo:'Medico-Editar'},canActivate:[AdminGuard, RenuevaTokenGuard] },
+      { path: 'busqueda/:termino', component: BusquedaComponent, data:{titulo:'Busqueda'}, canActivate:[AdminGuard, RenuevaTokenGuard] },
       
       { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
     ] 
